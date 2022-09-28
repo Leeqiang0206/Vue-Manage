@@ -12,7 +12,7 @@
         <span slot="title">{{item.label}}</span>
         </template>
         <el-menu-item-group v-for="(subItem,subIndex) in item.children"  :key="subItem.path">
-        <el-menu-item :index="subIndex+ ''">{{subItem.label}}</el-menu-item>
+        <el-menu-item @click="clickMenu(subItem)" :index="subIndex+ ''">{{subItem.label}}</el-menu-item>
         </el-menu-item-group>
        
     </el-submenu>
@@ -55,14 +55,15 @@ export default {
                             name:'page1',
                             label:'页面一',
                             icon:'setting',
-                            url:'Other/PageOne'
+                            url:'../src/views/other/PageO.vue'
                         },
                         {
                             path:'/page2',
-                            name:'page3',
+                            name:'page2',
                             label:'页面二',
                             icon:'setting',
-                            url:'Other/PageTwo'
+                            url:'../src/views/other/PageT.vue'
+
                         },
                     ]
                 }
