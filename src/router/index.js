@@ -10,6 +10,7 @@ const routes = [
     path: '/',
     name: 'Main',
     component: Main,
+    redirect:'/home',
     children:[
       {
         path:'/home',
@@ -30,7 +31,8 @@ const routes = [
         path:'/page1',
         name:'page1',
         component:()=>import('../views/other/PageO.vue')
-      },{
+      },
+      {
         path:'/page2',
         name:'page2',
         component:()=>import('../views/other/PageT.vue')

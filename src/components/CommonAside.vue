@@ -81,6 +81,7 @@ export default {
                 this.$router.push({
                     name:item.name
                 })
+                this.$store.commit('selectMenu',item)
             },
         },
         computed:{
@@ -106,7 +107,7 @@ export default {
     height: 100%;
     border: none;
     h3{
-        color:#fff;
+        color:rgb(255, 255, 255);
         text-align:center;
         line-height: 48px;
 

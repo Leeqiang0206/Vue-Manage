@@ -41,10 +41,10 @@
           </div>
         </el-card>
         <div class="graph">
-          <el-card style="height: 265px;">
+          <el-card style="height: 260px;">
             <div style="height: 240px;" ref="userEcharts"></div>
           </el-card>
-          <el-card style="height: 265px;">
+          <el-card style="height: 260px;">
             <div style="height: 240px;" ref="videoEcharts"></div>
           </el-card>
         </div>
@@ -242,7 +242,6 @@ export default {
       align-items: center;
       padding-bottom: 20px;
       margin-bottom: 20px;
-      border-bottom: 1px solid #ccc;
       img {
         width: 150px;
         height: 150px;
