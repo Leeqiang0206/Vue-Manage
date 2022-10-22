@@ -25,48 +25,47 @@ export default {
     data() {
         return {
             menu:[
+            {
+              path: '/',
+              name: 'home',
+              label: '首页',
+              icon: 's-home',
+              url: 'Home/home'
+            },
+            {
+              path: '/mall',
+              name: 'mall',
+              label: '商品管理',
+              icon: 'video-play',
+              url: 'MallManage/MallManage'
+            },
+            {
+              path: '/user',
+              name: 'user',
+              label: '用户管理',
+              icon: 'user',
+              url: 'UserManage/UserManage'
+            },
+            {
+              label: '其他',
+              icon: 'location',
+              children: [
                 {
-                    path:'/',
-                    name:'home',
-                    label:'首页',
-                    icon:'s-home',
-                    url:'Home/Home'
+                  path: '/page1',
+                  name: 'page1',
+                  label: '页面1',
+                  icon: 'setting',
+                  url: 'other/pageOne.vue'
                 },
                 {
-                    path:'/mall',
-                    name:'mall',
-                    label:'商品管理',
-                    icon:'video-play',
-                    url:'MallManage/MallManage'
-                },
-                {
-                    path:'/user',
-                    name:'user',
-                    label:'用户管理',
-                    icon:'user',
-                    url:'UserManage/UserManage'
-                },
-                {
-                    label:'其他',
-                    icon:'location',
-                    children:[
-                        {
-                            path:'/page1',
-                            name:'page1',
-                            label:'页面一',
-                            icon:'setting',
-                            url:'../src/views/other/PageO.vue'
-                        },
-                        {
-                            path:'/page2',
-                            name:'page2',
-                            label:'页面二',
-                            icon:'setting',
-                            url:'../src/views/other/PageT.vue'
-
-                        },
-                    ]
+                  path: '/page2',
+                  name: 'page2',
+                  label: '页面2',
+                  icon: 'setting',
+                  url: 'other/pageTwo.vue'
                 }
+              ]
+            }
             ]
         };
         },
@@ -85,15 +84,18 @@ export default {
             },
         },
         computed:{
-            noChildren(){
-               return this.menu.filter(item => !item.children)
+            noChildren() {
+            return this.menu.filter(item => !item.children)
             },
-            hasChildren(){
-               return this.menu.filter(item => item.children)
+            hasChildren() {
+                return this.menu.filter(item => item.children)
             },
-            isCollapse(){
-                return this.$store.state.tab.isCollapse
+            isCollapse() {
+            return this.$store.state.tab.isCollapse
             },
+            // asyncMenu() {
+            // return this.$store.state.tab.menu
+            // }
         },
 }
 </script>
